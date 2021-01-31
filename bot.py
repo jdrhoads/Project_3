@@ -77,17 +77,17 @@ def main(argv):
                 strategy.tick(candlestick)
                 
             except ccxt.NetworkError as e:
-                print(type(e).__name__, e.args, , 'Exchange error (ignoring)')
+                print(type(e).__name__, e.args, ('Exchange error (ignoring)'))
             except ccxt.ExchangeError as e:
-                print(type(e).__name__, e.args, , 'Exchange error (ignoring)')
+                print(type(e).__name__, e.args, ('Exchange error (ignoring)'))
             except ccxt.DDoSProtection as e:
-                print(type(e).__name__, e.args, 'DDoS Protection (ignoring)')
+                print(type(e).__name__, e.args, ('DDoS Protection (ignoring)'))
             except ccxt.RequestTimeout as e:
-                print(type(e).__name__, e.args, 'Request Timeout (ignoring)')
+                print(type(e).__name__, e.args, ('Request Timeout (ignoring)'))
             except ccxt.ExchangeNotAvailable as e:
-                print(type(e).__name__, e.args, 'Exchange Not Available due to downtime or maintenance (ignoring)')
+                print(type(e).__name__, e.args, ('Exchange Not Available due to downtime or maintenance (ignoring)'))
             except ccxt.AuthenticationError as e:
-                print(type(e).__name__, e.args, 'Authentication Error (missing API keys, ignoring)')
+                print(type(e).__name__, e.args, ('Authentication Error (missing API keys, ignoring)'))
 
             drawingCandles = copy.copy(strategy.candlesticks)
             if not candlestick.isClosed():
