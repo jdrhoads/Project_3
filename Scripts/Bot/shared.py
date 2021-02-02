@@ -1,6 +1,6 @@
 api = {
-    'key': '',
-    'secret': ''
+    'key': '09f98d48129434f9c87fe2543274aa88',
+    'secret': 'llq7wflSSE00Qt6gQucRv9wqQRQ0EPZ1SMG35vrE4U96XKqnGIqfobeHDZxgxTbHWAiTdo8UnDSNN5Z2zKAHcA=='
 }
 
 strategy = {

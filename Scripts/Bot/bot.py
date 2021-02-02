@@ -14,7 +14,7 @@ def main(argv):
     startTime = False
     endTime = False
     live = False
-    movingAverageLength = 20
+    #movingAverageLength = 20
 
     try:
         opts, args = getopt.getopt(argv,"ht:c:n:s:e",["timeframe=","currency=","exchange=","live"])
@@ -22,24 +22,24 @@ def main(argv):
         print('trading-bot.py -t <timeframe> -c <currency pair>')
         sys.exit(2)
 
-    for opt, arg in opts:
+    for opt, args in opts:
         if opt == '-h':
             print('trading-bot.py -t <timeframe> -c <currency pair>')
             sys.exit()
         elif opt in ("-s"):
-            startTime = str(arg)
+            startTime = str(args)
         elif opt in ("-e"):
-            endTime = str(arg)
+            endTime = str(args)
         elif opt in ("-t", "--timeframe"):
-            timeframe = str(arg)
+            timeframe = str(args)
             shared.strategy['timeframe'] = timeframe
         elif opt in ("-c", "--currency"):
-            pair = str(arg)
+            pair = str(args)
             shared.exchange['pair'] = pair
             shared.exchange['market'] = pair.split("/")[1]
             shared.exchange['coin'] = pair.split("/")[0]
         elif opt in ("--exchange"):
-            exchange = str(arg)
+            exchange = str(args)
             shared.exchange['name'] = exchange
         elif opt == "--live":
             print("You're going live... All loss are your reponsability only!")
